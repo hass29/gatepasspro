@@ -8,20 +8,19 @@ const Ledger = ({ products }) => {
   const [ledgerData, setLedgerData] = useState({ entries: [], summary: { totalIn: 0, totalOut: 0, net: 0 } });
   const [filters, setFilters] = useState({ productId: 'all', direction: 'all', fromDate: '', toDate: '' });
 
-  const loadLedger = async () => {
-    try {
-      const res = await fetchLedger(filters);
-      setLedgerData(res.data);
-    } catch (error) {
-      console.error('Error loading ledger:', error);
-    }
-  };
-
   useEffect(() => {
     if (isUnlocked) {
+      const loadLedger = async () => {
+        try {
+          const res = await fetchLedger(filters);
+          setLedgerData(res.data);
+        } catch (error) {
+          console.error('Error loading ledger:', error);
+        }
+      };
       loadLedger();
     }
-  }, [isUnlocked, filters]);
+  }, [isUnlocked, filters]); // dependencies are correct now
 
   const handleUnlock = () => {
     if (password === 'ledger2025') {
