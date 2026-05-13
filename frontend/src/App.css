@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background: #f0f4f8;
+  padding: 1.8rem;
+}
+
+.app-container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(135deg, #0f2d26 0%, #1a4a3b 100%);
+  color: white;
+  padding: 1.2rem 2rem;
+  border-radius: 32px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.18);
+  padding: 0.5rem 1.2rem;
+  border-radius: 48px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+.stat-card .number {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.stat-card .label {
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: white;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  border-radius: 60px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.tab-btn i {
+  margin-right: 8px;
+}
+
+.tab-btn.active {
+  background: #2c7a5e;
+  color: white;
+  box-shadow: 0 6px 14px rgba(44,122,94,0.3);
+}
+
+.tab-btn:hover:not(.active) {
+  background: #e2eae8;
+}
+
+.card {
+  background: white;
+  border-radius: 32px;
+  padding: 1.6rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+  color: #1a4a3b;
+  border-left: 6px solid #2c7a5e;
+  padding-left: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-group label {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #2c5a4a;
+}
+
+.input-group input, .input-group select, .input-group textarea {
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 28px;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.input-group input:focus, .input-group select:focus {
+  border-color: #2c7a5e;
+  outline: none;
+}
+
+.direction-group {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.btn-primary {
+  background: #2c7a5e;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: #1d5e48;
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: #c44536;
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 0.75rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 24px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eef2f0;
+}
+
+th {
+  background: #f5faf8;
+  color: #1e4a3b;
+  font-weight: 700;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status-pending {
+  background: #fff3e0;
+  color: #c47a2e;
+}
+
+.status-approved {
+  background: #e0f7ec;
+  color: #0f6e46;
+}
+
+.status-declined {
+  background: #ffe6e5;
+  color: #bc3f2e;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 4px;
+  font-size: 0.9rem;
+  padding: 5px 8px;
+  border-radius: 30px;
+}
+
+.inward-text {
+  color: #10b981;
+  font-weight: 800;
+}
+
+.outward-text {
+  color: #ef4444;
+  font-weight: 800;
+}
+
+.alert {
+  background: #fef9e3;
+  padding: 12px 16px;
+  border-radius: 24px;
+  margin: 15px 0;
+  border-left: 4px solid #e6b422;
+}
+
+.stock-warning {
+  color: #e67e22;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+.ledger-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.lock-area {
+  background: #fafcfb;
+  border-radius: 32px;
+  padding: 2rem;
+  text-align: center;
+  border: 2px dashed #cbdcd6;
+}
+
+.summary-card {
+  background: linear-gradient(110deg, #1a4e3e 0%, #286e56 100%);
+  color: white;
+  padding: 1rem 1.8rem;
+  border-radius: 28px;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 1rem;
+  }
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
