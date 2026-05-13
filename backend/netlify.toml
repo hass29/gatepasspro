@@ -1,0 +1,16 @@
+# netlify.toml
+[build]
+  # This is a mandatory placeholder build command for Netlify to process your function
+  command = "echo 'Building functions...'"
+  # This is the directory where your frontend static files are built
+  publish = "frontend/build" 
+
+[functions]
+  # This tells Netlify where your function files are located
+  directory = "netlify/functions"
+
+[[redirects]]
+  # This rule catches all requests to '/Api/*' and forwards them to your serverless function
+  from = "/Api/*"
+  to = "/.netlify/functions/Api/:splat"
+  status = 200
